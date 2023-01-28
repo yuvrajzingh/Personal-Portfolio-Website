@@ -9,6 +9,8 @@
     <!-- css -->
     <link rel="stylesheet" href="style.css">
 
+    
+
     <!-- Font-Awesome -->
     <script src="https://kit.fontawesome.com/edf267e088.js" crossorigin="anonymous"></script>
 
@@ -152,7 +154,7 @@
             <div class="row">
                 <div class="contact-left">
                     <h1>Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>yuvisingh1810@gmail.com</p>
+                    <p><i class="fa-solid fa-envelope"></i>yuvisingh1810@gmail.com</p>
                     <p><i class="fa-solid fa-phone"></i>012345679</p>
                     <div class="social-icons">
                         <a href="#"><i class="fa-brands fa-spotify"></i></a>
@@ -163,13 +165,12 @@
                     <a href="images/CV.docx" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                    <form name="submit-to-mail" id="myForm">
+                        <input type="text" name="Name" placeholder="Your Name" class="name" required>
+                        <input type="email" name="Email" placeholder="Your Email" class="email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" class="message"></textarea>
+                        <button type="submit" class="btn btn2 sendBtn">Submit</button>
                     </form>
-                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -216,7 +217,9 @@
 
     </script>
 
-    <script>
+
+    <!-- // To get details in a Google sheet // -->
+    <!-- <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxEkMeqvXAk2zObPedRh4hLpiEBVJ4-t4isPq35E7WY3G4_X5et0D5zeCt_7ifpyFTEuw/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
@@ -233,7 +236,25 @@
             })
             .catch(error => console.error('Error!', error.message))
         })
-      </script>
+      </script> -->
+
+
+    <!-- Email JS Link -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('r5KVFTgctR9T5mxqU');
+      })();
+    </script>
+
+
+    
+    <script src="index.js"></script>
 
 </body>
 </html>
